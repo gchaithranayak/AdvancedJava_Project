@@ -8,65 +8,93 @@
 
 <style>
 body {
-    font-family: Arial;
-    background: #eaf2f8;
-    text-align: center;
+    font-family: 'Segoe UI', Arial;
+    margin: 0;
+    background: linear-gradient(to right, #5a0000, #f8f8f8);
 }
 
-h2 {
-    color: #2c3e50;
-}
-
-form {
-    background: white;
+/* Header */
+.header {
+    margin: 20px auto;
+    max-width: 500px;
     padding: 20px;
-    width: 350px;
-    margin: auto;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px gray;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+
+    color: #5a0000;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
+/* Form Container */
+.form-box {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+
+    padding: 25px;
+    width: 400px;
+    margin: 30px auto;
+
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Inputs */
 input, select {
     width: 90%;
-    padding: 8px;
-    margin: 8px;
-    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
     border: 1px solid #ccc;
+    outline: none;
 }
 
+/* Button */
 input[type="submit"] {
-    background: #2ecc71;
+    background: #800000;
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 25px;
+    font-weight: bold;
 }
 
 input[type="submit"]:hover {
-    background: #27ae60;
+    background: #a00000;
 }
 
+/* Back link */
 a {
     display: block;
+    text-align: center;
     margin-top: 20px;
     text-decoration: none;
-    color: #2980b9;
+    color: #800000;
+    font-weight: bold;
 }
 </style>
 
 </head>
+
 <body>
 
-<h2>Add Patient</h2>
+<div class="header">
+    <h2>➕ Add Patient</h2>
+    <p>Enter patient details below</p>
+</div>
+
+<div class="form-box">
 
 <form action="AddPatientServlet" method="post">
-
-    <input type="number" name="id" placeholder="Patient ID" required>
 
     <input type="text" name="name" placeholder="Patient Name" required>
 
     <input type="number" name="age" placeholder="Age" required>
 
     <select name="gender">
+        <option value="">Select Gender</option>
         <option value="Male">Male</option>
         <option value="Female">Female</option>
     </select>
@@ -80,6 +108,8 @@ a {
     <input type="submit" value="Add Patient">
 
 </form>
+
+</div>
 
 <a href="index.jsp">⬅ Back to Home</a>
 
