@@ -17,20 +17,18 @@ public class HospitalDAO {
 
     // ADD
     public boolean addPatient(Patient p) {
-        String sql = "INSERT INTO Patients VALUES (?, ?, ?, ?, ?, ?, ?)";
+    	String sql = "INSERT INTO Patients (PatientName, Age, Gender, AdmissionDate, Ailment, AssignedDoctor) VALUES (?, ?, ?, ?, ?, ?)";
 
         try {
             Connection con = getConnection();
             PreparedStatement ps = con.prepareStatement(sql);
 
-            ps.setInt(1, p.getPatientID());
-            ps.setString(2, p.getPatientName());
-            ps.setInt(3, p.getAge());
-            ps.setString(4, p.getGender());
-            ps.setDate(5, java.sql.Date.valueOf(p.getAdmissionDate()));
-            ps.setString(6, p.getAilment());
-            ps.setString(7, p.getAssignedDoctor());
-
+            ps.setString(1, p.getPatientName());
+            ps.setInt(2, p.getAge());
+            ps.setString(3, p.getGender());
+            ps.setDate(4, java.sql.Date.valueOf(p.getAdmissionDate()));
+            ps.setString(5, p.getAilment());
+            ps.setString(6, p.getAssignedDoctor());
             int rows = ps.executeUpdate();
 
             System.out.println("Rows inserted: " + rows);
