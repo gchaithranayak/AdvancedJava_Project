@@ -5,41 +5,115 @@
 <head>
 <meta charset="UTF-8">
 <title>Update Patient</title>
+
 <style>
-body { font-family:Arial; background:#eef2f3; }
-.container {
-    display:flex; justify-content:center;
-    margin-top:50px;
+body {
+    font-family: 'Segoe UI', Arial;
+    margin: 0;
+    background: linear-gradient(to right, #5a0000, #f8f8f8);
 }
-.box {
-    padding:20px; background:white;
-    border-radius:10px; width:400px;
+
+/* Header */
+.header {
+    margin: 20px auto;
+    max-width: 500px;
+    padding: 20px;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+
+    color: #5a0000;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
-input { width:100%; margin:10px 0; padding:8px; }
+
+/* Form Box */
+.form-box {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+
+    padding: 25px;
+    width: 400px;
+    margin: 30px auto;
+
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Inputs */
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+/* Button */
 button {
-    background:#f39c12; color:white;
-    padding:10px; border:none; width:100%;
+    width: 90%;
+    padding: 10px;
+    margin-top: 10px;
+
+    background: linear-gradient(to right, #800000, #a00000);
+    color: white;
+
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(to right, #a00000, #800000);
+    transform: scale(1.05);
+}
+
+/* Back link */
+a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #800000;
+    font-weight: bold;
 }
 </style>
+
 </head>
 
 <body>
 
-<div class="container">
-<div class="box">
-<h2>Update Patient</h2>
+<div class="header">
+    <h2>✏️ Update Patient</h2>
+    <p>Modify patient details</p>
+</div>
+
+<div class="form-box">
 
 <form action="UpdatePatientServlet" method="post">
+
 <input type="number" name="id" placeholder="Patient ID" required>
+
 <input type="text" name="name" placeholder="New Name">
+
 <input type="number" name="age" placeholder="New Age">
+
 <input type="text" name="ailment" placeholder="New Ailment">
+
 <input type="text" name="doctor" placeholder="New Doctor">
 
-<button type="submit">Update</button>
+<button type="submit">Update Patient</button>
+
 </form>
-</div>
+
 </div>
 
+<a href="index.jsp">⬅ Back to Home</a>
+
 </body>
+</html>
 </html>
