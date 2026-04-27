@@ -2,6 +2,7 @@ package com.model;
 
 
 public class Patient {
+
     private int patientID;
     private String patientName;
     private int age;
@@ -10,18 +11,32 @@ public class Patient {
     private String ailment;
     private String assignedDoctor;
 
-    public Patient(int id, String name, int age, String gender,
-                   String date, String ailment, String doctor) {
-        this.patientID = id;
-        this.patientName = name;
+    // ✅ Constructor WITHOUT ID (USED FOR INSERT)
+    public Patient(String patientName, int age, String gender,
+                   String admissionDate, String ailment, String assignedDoctor) {
+
+        this.patientName = patientName;
         this.age = age;
         this.gender = gender;
-        this.admissionDate = date;
+        this.admissionDate = admissionDate;
         this.ailment = ailment;
-        this.assignedDoctor = doctor;
+        this.assignedDoctor = assignedDoctor;
     }
 
-    // Getters
+    // ✅ Constructor WITH ID (USED FOR DISPLAY)
+    public Patient(int patientID, String patientName, int age, String gender,
+                   String admissionDate, String ailment, String assignedDoctor) {
+
+        this.patientID = patientID;
+        this.patientName = patientName;
+        this.age = age;
+        this.gender = gender;
+        this.admissionDate = admissionDate;
+        this.ailment = ailment;
+        this.assignedDoctor = assignedDoctor;
+    }
+
+    // getters
     public int getPatientID() { return patientID; }
     public String getPatientName() { return patientName; }
     public int getAge() { return age; }
