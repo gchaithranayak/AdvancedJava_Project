@@ -10,7 +10,7 @@
 body {
     font-family: 'Segoe UI', Arial;
     margin: 0;
-    background: linear-gradient(to right, #5a0000, #f8f8f8);
+    background: linear-gradient(to right, #d8a7b1, #f8f8f8);
 }
 
 /* Header */
@@ -94,6 +94,7 @@ a {
 
 <form action="ReportCriteriaServlet" method="post">
     <input type="hidden" name="type" value="ailment">
+   
     <button type="submit">🩺 Patients by Ailment</button>
 </form>
 
