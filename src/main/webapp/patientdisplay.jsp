@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*,com.dao.HospitalDAO,com.model.Patient" %>
@@ -12,7 +11,7 @@
 body {
     font-family: 'Segoe UI', Arial;
     margin: 0;
-    background: linear-gradient(to right, #5a0000, #f8f8f8);
+    background: linear-gradient(to right, #d8a7b1 , #f8f8f8);
 }
 
 /* Header */
@@ -91,12 +90,14 @@ a {
 <div class="table-box">
 
 <table>
+
 <tr>
 <th>ID</th>
 <th>Name</th>
-<th>Age</th>
+<th>DOB</th>
 <th>Gender</th>
-<th>Date</th>
+<th>Weight</th>
+<th>Admission Date</th>
 <th>Ailment</th>
 <th>Doctor</th>
 </tr>
@@ -105,11 +106,11 @@ a {
 HospitalDAO dao = new HospitalDAO();
 List<Patient> list = dao.getAllPatients();
 
-if(list.isEmpty()){
+if(list == null || list.isEmpty()){
 %>
 
 <tr>
-<td colspan="7" style="color:red;">No Records Found</td>
+<td colspan="8" style="color:red;">No Records Found</td>
 </tr>
 
 <%
@@ -120,8 +121,9 @@ for(Patient p : list){
 <tr>
 <td><%=p.getPatientID()%></td>
 <td><%=p.getPatientName()%></td>
-<td><%=p.getAge()%></td>
+<td><%=p.getDob()%></td>
 <td><%=p.getGender()%></td>
+<td><%=p.getWeight()%></td>
 <td><%=p.getAdmissionDate()%></td>
 <td><%=p.getAilment()%></td>
 <td><%=p.getAssignedDoctor()%></td>
@@ -133,7 +135,6 @@ for(Patient p : list){
 %>
 
 </table>
-
 </div>
 
 <a href="index.jsp">⬅ Back to Home</a>
