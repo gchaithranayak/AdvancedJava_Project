@@ -12,7 +12,7 @@
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
-    <!-- Add Patient -->
+    <!-- ADD PATIENT -->
     <servlet>
         <servlet-name>Add</servlet-name>
         <servlet-class>com.servlet.AddPatientServlet</servlet-class>
@@ -22,7 +22,7 @@
         <url-pattern>/AddPatientServlet</url-pattern>
     </servlet-mapping>
 
-    <!-- Update Patient -->
+    <!-- UPDATE PATIENT -->
     <servlet>
         <servlet-name>Update</servlet-name>
         <servlet-class>com.servlet.UpdatePatientServlet</servlet-class>
@@ -32,7 +32,7 @@
         <url-pattern>/UpdatePatientServlet</url-pattern>
     </servlet-mapping>
 
-    <!-- Delete Patient -->
+    <!-- DELETE PATIENT (STEP 1 - SHOW DETAILS) -->
     <servlet>
         <servlet-name>Delete</servlet-name>
         <servlet-class>com.servlet.DeletePatientServlet</servlet-class>
@@ -42,7 +42,17 @@
         <url-pattern>/DeletePatientServlet</url-pattern>
     </servlet-mapping>
 
-    <!-- Report Criteria -->
+    <!-- CONFIRM DELETE (STEP 2 - ACTUAL DELETE) -->
+    <servlet>
+        <servlet-name>ConfirmDelete</servlet-name>
+        <servlet-class>com.servlet.ConfirmDeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ConfirmDelete</servlet-name>
+        <url-pattern>/ConfirmDeleteServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- REPORT CRITERIA -->
     <servlet>
         <servlet-name>Criteria</servlet-name>
         <servlet-class>com.servlet.ReportCriteriaServlet</servlet-class>
@@ -52,7 +62,7 @@
         <url-pattern>/ReportCriteriaServlet</url-pattern>
     </servlet-mapping>
 
-    <!-- Report -->
+    <!-- REPORT -->
     <servlet>
         <servlet-name>Report</servlet-name>
         <servlet-class>com.servlet.ReportServlet</servlet-class>
